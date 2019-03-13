@@ -1,18 +1,14 @@
 let fetches = require('./Callback');
 let fetchPromise = fetches.fetchPromise;
-let fetchRejection = fetchRejection;
+let fetchRejection = fetches.fetchRejection;
 
 // Now we get to the best part: Async Await
 
 // in the typical async/await fashion, you need to denote the test function as async
 test('the data is peanut butter', async () => {
-
     expect.assertions(1);
     const data = await fetchPromise();
-
-    // now that you have the data via await, you can test it normally
     expect(data).toBe('peanut butter');
-
 });
 
 // same thing with catches/rejects
@@ -31,5 +27,5 @@ test('the data is peanut butter', async () => {
 });
 
 test('the fetch fails with an error', async () => {
-    await expect(fetchRejection()).rejects.toBe('error');
+    await expect(fetchRejection()).rejects.toMatch('error');
 });
