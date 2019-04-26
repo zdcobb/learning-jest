@@ -1,2 +1,2 @@
 # learning-jest
-Screwing around in the jest tutorials trying to learn
+Going through the jest tutorials trying to learn the basics
